@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plants & Nature — Palma Sola Botanical Park</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .inat-hero {
+      background: linear-gradient(135deg, #2d5016, #4a7c2f);
+      color: var(--sand);
+      padding: 3rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .inat-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .inat-hero h1 { font-family: var(--font-display); font-size: 2.4rem; color: var(--sand); margin-bottom: 0.5rem; }
+    .inat-hero p { color: rgba(245,239,224,0.82); max-width: 640px; font-size: 1.05rem; line-height: 1.65; margin-bottom: 1.5rem; }
+    .inat-hero .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .inat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+
+    .inat-card {
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: block;
+    }
+
+    .inat-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(45,80,22,0.15); }
+    .inat-card img { width: 100%; height: 150px; object-fit: cover; }
+
+    .inat-no-photo {
+      width: 100%; height: 150px;
+      background: #e0edd4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; color: #888;
+    }
+
+    .inat-info { padding: 0.75rem; }
+    .inat-common { display: block; font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .inat-sci { display: block; font-size: 0.78rem; font-style: italic; color: #888; margin-bottom: 0.2rem; }
+    .inat-date { display: block; font-size: 0.72rem; color: #aaa; }
+    .inat-link { margin-top: 0; font-size: 0.9rem; }
+    .inat-link a { color: var(--green-mid); font-weight: 600; }
+
+    .loading { color: #999; font-style: italic; font-size: 0.9rem; padding: 1.5rem 0; }
+
+    .how-to-box {
+      background: #f0f7e8;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid #c5dfa8;
+    }
+
+    .how-to-box h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--green-deep); margin-bottom: 0.75rem; }
+    .how-to-box ol { padding-left: 1.5rem; color: var(--text-light); font-size: 0.95rem; line-height: 2; }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .fact-chip {
+      background: var(--sand);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      border-left: 3px solid var(--green-light);
+    }
+
+    .fact-chip strong { display: block; font-family: var(--font-display); font-size: 1.5rem; color: var(--green-deep); }
+    .fact-chip span { font-size: 0.85rem; color: var(--text-light); }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Palma Sola Botanical Park</span>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="nature.html" class="active">Nature</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="venue.html">Rent the Park</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html" class="btn btn-accent" style="padding:0.35rem 0.9rem;font-size:0.8rem;">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="inat-hero">
+    <div class="inat-hero-inner">
+      <h1>Plants &amp; Nature</h1>
+      <p>We don't know everything that lives here. That's not a failing — it's the whole point. Every visit is a chance to document something, add to the record, and contribute to real science. iNaturalist makes that possible for anyone with a phone.</p>
+      <div class="btn-row">
+        <a href="https://www.inaturalist.org/projects/palma-sola-botanical-park" target="_blank" rel="noopener" class="btn btn-primary">View on iNaturalist</a>
+        <a href="https://www.inaturalist.org/observations/new" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:var(--green-light);color:var(--green-light);">Add an observation</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-content" style="padding-top:2.5rem">
+
+    <div class="facts-grid">
+      <div class="fact-chip"><strong>460+</strong><span>Species observed in the park</span></div>
+      <div class="fact-chip"><strong>10 ac</strong><span>Frost-free, protected microclimate</span></div>
+      <div class="fact-chip"><strong>2008</strong><span>Rare Fruit Trail planted by Manatee Rare Fruit Council</span></div>
+      <div class="fact-chip"><strong>Research grade</strong><span>iNaturalist observations verified by experts</span></div>
+    </div>
+
+    <h2 class="section-head">Recent observations from the park</h2>
+    <p style="color:var(--text-light);margin-bottom:0.5rem">These are real, recent sightings logged by visitors and volunteers. Click any to see the full observation on iNaturalist.</p>
+    <div id="inat-nature"></div>
+
+    <div class="how-to-box">
+      <h2>How to contribute</h2>
+      <ol>
+        <li>Download the <strong>iNaturalist app</strong> (free, iOS or Android)</li>
+        <li>Walk through the park and photograph anything interesting — plants, insects, birds, fungi, anything</li>
+        <li>Submit your observation. The community and AI tools will help identify it</li>
+        <li>Once two experts agree, it becomes a verified "Research Grade" observation</li>
+        <li>Your data is permanently part of the park's scientific record</li>
+      </ol>
+    </div>
+
+    <h2 class="section-head">What you'll find here</h2>
+
+    <h3 class="sub-head">Rare Palm Collection</h3>
+    <p>The park began as a county palm nursery in 1990, and the collection reflects that history. Many specimens are rare outside of dedicated collections. This protected microclimate — notably frost-free — allows species to thrive here that couldn't survive anywhere else in the county.</p>
+
+    <h3 class="sub-head">Exotic Fruit Trail</h3>
+    <p>Planted and maintained by the Manatee Rare Fruit Council since 2008. Star fruit, dragon fruit, jackfruit, lychee, sapodilla, tamarind, persimmon, guava, loquat, Surinam cherry, white sapote, ylang ylang — over two dozen species on a single walk. Most visitors walk right past it without knowing.</p>
+
+    <h3 class="sub-head">Butterfly Garden</h3>
+    <p>Native host plants specifically chosen for Florida's butterfly species. Come in the morning. Bring a camera. Give the kids time to look carefully.</p>
+
+    <h3 class="sub-head">Three Lakes</h3>
+    <p>The park's lakes support wading birds, turtles, and aquatic plants. Wood storks, great blue herons, and anhingas are regular visitors. Log what you see on iNaturalist.</p>
+
+    <h3 class="sub-head">Florida Native Plants</h3>
+    <p>The park actively expands its native Florida plant collection. Volunteers propagate cuttings in the Hidden Garden Nursery and transplant them throughout the grounds. Ongoing iNaturalist observation helps us track what's thriving and what's finding its way in on its own.</p>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Palma Sola Botanical Park</div>
+        <p class="footer-text">501(c)(3) nonprofit · Bradenton, Florida</p>
+        <p class="footer-text" style="margin-top:0.75rem">9800 17th Ave NW · (941) 761-2866</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Plan Your Visit</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="nature.html">Plants &amp; Nature</a></li>
+          <li><a href="venue.html">Rent the Park</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="members.html">Membership</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Palma Sola Botanical Park Foundation, Inc.</span>
+      <span>Open 8am–Dusk · Free Always</span>
+    </div>
+  </footer>
+
+  <script src="js/psbp.js"></script>
+  <script>loadINaturalist('inat-nature', 12);</script>
+</body>
+</html>

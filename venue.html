@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent the Park — Palma Sola Botanical Park</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .venue-hero { background: linear-gradient(135deg, #1e3a0a 0%, #2d5016 60%, #4a7c2f 100%); color: var(--sand); padding: 3.5rem 1.5rem; }
+    .venue-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .venue-hero h1 { font-family: var(--font-display); font-size: 2.6rem; color: var(--sand); margin-bottom: 0.75rem; }
+    .venue-hero p { color: rgba(245,239,224,0.85); font-size: 1.1rem; max-width: 580px; line-height: 1.65; }
+    .venue-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-top: 2.5rem; }
+    .price-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem; }
+    .price-table th { background: var(--green-deep); color: var(--sand); padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+    .price-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-table tr:nth-child(even) td { background: var(--sand); }
+    .price-note { font-size: 0.82rem; color: var(--text-light); font-style: italic; margin-top: 0.5rem; }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; font-size: 0.92rem; color: var(--text-light); }
+    .checklist li::before { content: '✓'; position: absolute; left: 0; color: var(--green-mid); font-weight: 700; }
+    .contact-cta { background: var(--green-deep); color: var(--sand); border-radius: 10px; padding: 2rem; margin-bottom: 1.5rem; text-align: center; }
+    .contact-cta h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--sand); margin-bottom: 0.75rem; }
+    .contact-cta p { color: rgba(245,239,224,0.8); font-size: 0.9rem; margin-bottom: 1rem; }
+    .contact-cta .phone { font-size: 1.5rem; font-family: var(--font-display); color: var(--green-light); display: block; margin-bottom: 0.5rem; }
+    .sidebar-info { background: var(--sand); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.25rem; }
+    .sidebar-info h3 { font-family: var(--font-display); font-size: 1.05rem; color: var(--green-deep); margin-bottom: 0.6rem; }
+    .sidebar-info p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+    @media (max-width: 768px) { .venue-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Palma Sola Botanical Park</span>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="plants.html">Plants</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="venue.html" class="active">Rent the Park</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html" class="btn btn-accent" style="padding:0.35rem 0.9rem;font-size:0.8rem;">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="venue-hero">
+    <div class="venue-hero-inner">
+      <h1>Rent the Park</h1>
+      <p>Weddings, parties, corporate events, and private gatherings in one of Manatee County's most beautiful outdoor settings. Venue rentals are how we keep the park free for the public — your event directly supports the mission.</p>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="venue-grid">
+      <div>
+        <h2 class="section-head">The Setting</h2>
+        <p>Ten acres of lush botanical gardens, three lakes, a butterfly garden, rare palms, and subtropical plantings — all private for your event. The Galleria building and Baden building (office/Bride's Room) are included in rentals.</p>
+        <p>The park's protected microclimate makes it a year-round venue. Rainfall and temperature here tend to be gentler than surrounding areas — a legacy of the park's former life as the county nursery.</p>
+
+        <h2 class="section-head">What's Included</h2>
+        <ul class="checklist">
+          <li>Exclusive use of the full 10-acre park for your event</li>
+          <li>Galleria building (indoor/outdoor event space)</li>
+          <li>Baden building — office and Bride's/VIP Room</li>
+          <li>Tables, chairs, and cocktail tables (recently upgraded via Selby Foundation grant)</li>
+          <li>On-site manager from one hour before start until all guests depart</li>
+          <li>Parking</li>
+        </ul>
+
+        <h2 class="section-head">Pricing</h2>
+        <table class="price-table">
+          <thead>
+            <tr><th>Package</th><th>Details</th><th>Price</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Weekday Event</td><td>Monday–Thursday</td><td>Contact for quote</td></tr>
+            <tr><td>Weekend Event</td><td>Friday–Sunday</td><td>Contact for quote</td></tr>
+            <tr><td>Security Deposit</td><td>Refundable, held against damage</td><td>$750</td></tr>
+            <tr><td>On-Site Manager</td><td>Required for all events</td><td>$300</td></tr>
+          </tbody>
+        </table>
+        <p class="price-note">A 3% processing fee applies to credit/debit card payments. Cash and check accepted. Half of venue fee plus security deposit due at contract signing. Members receive a 10% discount on venue rentals.</p>
+
+        <h2 class="section-head">Your Responsibilities</h2>
+        <ul class="checklist">
+          <li>One-day event insurance required ($100–150, we can provide referrals)</li>
+          <li>Catering is your choice — we have a list of vendors we've worked with</li>
+          <li>All furniture, trash, and personal items removed before manager closes</li>
+          <li>Park rules apply to all guests</li>
+        </ul>
+
+        <h2 class="section-head">How to Book</h2>
+        <p>Call or email to check date availability and start the conversation. We'll walk you through the contract, answer questions, and schedule a walk-through if you'd like to see the space before committing.</p>
+        <p>Your date is officially reserved upon contract execution and receipt of deposit.</p>
+      </div>
+
+      <aside>
+        <div class="contact-cta">
+          <h3>Ready to book?</h3>
+          <p>Call or email Jennifer (mornings) to check availability.</p>
+          <span class="phone">(941) 761-2866</span>
+          <a href="mailto:palmasolabp@aol.com?subject=Venue Rental Inquiry" class="btn btn-primary" style="display:block">Email us</a>
+        </div>
+
+        <div class="sidebar-info">
+          <h3>Members save 10%</h3>
+          <p>Annual members at Donor level and above receive a 10% discount on venue rentals. <a href="members.html">See membership levels →</a></p>
+        </div>
+
+        <div class="sidebar-info">
+          <h3>Park closure notice</h3>
+          <p>When a private event is booked, we close the park to general visitors. We post all closures to our events list.</p>
+          <a href="events.html" style="font-size:0.88rem;color:var(--green-mid);font-weight:600">Check upcoming closures →</a>
+        </div>
+
+        <div class="sidebar-info">
+          <h3>Why book here?</h3>
+          <p>Your rental fee directly funds park operations. You're throwing an event <em>and</em> supporting a community institution. That's a good combination.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Palma Sola Botanical Park</div>
+        <p class="footer-text">501(c)(3) nonprofit · Bradenton, Florida</p>
+        <p class="footer-text" style="margin-top:0.75rem">9800 17th Ave NW · (941) 761-2866 · palmasolabp@aol.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Plan Your Visit</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="nature.html">Plants &amp; Nature</a></li>
+          <li><a href="venue.html">Rent the Park</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="members.html">Membership</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Palma Sola Botanical Park Foundation, Inc.</span>
+      <span>Open 8am–Dusk · Free Always</span>
+    </div>
+  </footer>
+  <script src="js/psbp.js"></script>
+</body>
+</html>

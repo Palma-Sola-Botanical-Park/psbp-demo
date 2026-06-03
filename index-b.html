@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palma Sola Botanical Park — Theme B</title>
+  <meta name="description" content="A free, volunteer-powered botanical park in Bradenton, Florida.">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    /* ---- VARIANT 2: CLEAN & COMMUNITY ---- */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,wght@0,600;1,300;1,600&display=swap');
+
+    :root {
+      --v2-cream: #faf6ef;
+      --v2-green: #3a7d1e;
+      --v2-dark: #1c2b0e;
+      --v2-yellow: #e8c84a;
+      --v2-orange: #d4581a;
+      --v2-light-green: #e8f5d8;
+    }
+
+    body { background: var(--v2-cream); font-family: 'DM Sans', sans-serif; }
+
+    /* --- TOPBAR --- */
+    .topbar {
+      background: var(--v2-yellow);
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--v2-dark);
+      letter-spacing: 0.04em;
+    }
+
+    .topbar a { color: var(--v2-dark); text-decoration: underline; }
+
+    /* --- NAV (override) --- */
+    .site-nav { background: var(--v2-dark); }
+    .nav-logo { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--v2-yellow); }
+    .nav-links a { color: rgba(255,255,255,0.75); }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.1); color: white; }
+
+    /* --- HERO: SPLIT LAYOUT --- */
+    .hero-split {
+      background: var(--v2-light-green);
+      min-height: 520px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-left {
+      padding: 4rem 3rem 4rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--v2-green);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-left h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      color: var(--v2-dark);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+
+    .hero-left h1 span {
+      font-style: italic;
+      color: var(--v2-green);
+    }
+
+    .hero-left p {
+      font-size: 1.05rem;
+      color: #444;
+      max-width: 440px;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .cta-primary {
+      background: var(--v2-green);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta-primary:hover { background: var(--v2-dark); color: white; text-decoration: none; }
+
+    .cta-secondary {
+      color: var(--v2-green);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 0.75rem 0;
+      border-bottom: 2px solid var(--v2-green);
+    }
+
+    .hero-right {
+      background: var(--v2-dark);
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .hero-right-title {
+      font-family: 'Fraunces', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--v2-yellow);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .quick-fact {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 6px;
+    }
+
+    .fact-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+    .fact-text strong {
+      display: block;
+      color: white;
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .fact-text span { color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+
+    /* --- MARQUEE --- */
+    .marquee-wrap {
+      background: var(--v2-green);
+      overflow: hidden;
+      padding: 0.7rem 0;
+    }
+
+    .marquee-inner {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-item {
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+    }
+
+    .marquee-item::before { content: '🌿 '; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* --- CARDS ROW --- */
+    .cards-row {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem 1.5rem;
+      border-top: 4px solid var(--v2-green);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .feature-card .card-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+
+    .feature-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      color: var(--v2-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p { font-size: 0.9rem; color: #666; line-height: 1.6; margin-bottom: 1rem; }
+
+    .feature-card a { font-weight: 700; font-size: 0.88rem; color: var(--v2-green); }
+
+    /* --- EVENTS STRIP --- */
+    .events-strip {
+      background: var(--v2-dark);
+      padding: 4rem 1.5rem;
+    }
+
+    .events-strip-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .strip-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2rem;
+    }
+
+    .strip-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      color: white;
+      font-style: italic;
+    }
+
+    .strip-header a { color: var(--v2-yellow); font-size: 0.9rem; font-weight: 700; }
+
+    /* Events in dark context */
+    #events-b .event-card { border-bottom-color: rgba(255,255,255,0.1); }
+    #events-b .event-date { color: var(--v2-yellow); }
+    #events-b .event-time { color: rgba(255,255,255,0.4); }
+    #events-b .event-title { color: white; }
+    #events-b .event-desc { color: rgba(255,255,255,0.6); }
+    #events-b .demo-notice { background: rgba(255,255,255,0.05); border-left-color: var(--v2-yellow); color: rgba(255,255,255,0.7); }
+    #events-b .demo-notice a { color: var(--v2-yellow); }
+    #events-b .loading { color: rgba(255,255,255,0.4); }
+
+    /* --- iNAT --- */
+    .inat-v2 {
+      background: var(--v2-cream);
+      padding: 4rem 1.5rem;
+    }
+
+    .inat-v2-inner { max-width: 1100px; margin: 0 auto; }
+
+    .inat-v2 h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      color: var(--v2-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .inat-v2 p.lead { color: #666; max-width: 580px; margin-bottom: 2rem; }
+
+    .inat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .inat-card {
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+      text-decoration: none;
+      display: block;
+    }
+
+    .inat-card:hover { transform: translateY(-3px); }
+    .inat-card img { width: 100%; height: 130px; object-fit: cover; }
+
+    .inat-no-photo {
+      width: 100%; height: 130px;
+      background: var(--v2-light-green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; color: #888;
+    }
+
+    .inat-info { padding: 0.6rem 0.75rem; }
+    .inat-common { display: block; font-size: 0.85rem; font-weight: 700; color: var(--v2-dark); margin-bottom: 0.15rem; }
+    .inat-sci { display: block; font-size: 0.75rem; font-style: italic; color: #888; margin-bottom: 0.15rem; }
+    .inat-date { display: block; font-size: 0.72rem; color: #aaa; }
+    .inat-link { margin-top: 1rem; font-size: 0.9rem; }
+    .inat-link a { color: var(--v2-green); font-weight: 700; }
+
+    .events-section {}
+    .past-events-toggle summary { cursor: pointer; color: rgba(255,255,255,0.5); font-size: 0.9rem; padding: 0.5rem 0; margin-top: 1rem; }
+    .event-card { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid #e0e0e0; }
+    .event-card:last-child { border-bottom: none; }
+    .event-date-col { padding-top: 0.1rem; }
+    .event-date { display: block; font-family: 'Fraunces', serif; font-size: 0.95rem; color: var(--earth); font-weight: 600; line-height: 1.3; }
+    .event-time { display: block; font-size: 0.78rem; color: #999; margin-top: 0.2rem; }
+    .event-header { display: flex; align-items: flex-start; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.25rem; }
+    .event-title { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--text); font-weight: 600; }
+    .event-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: white; background: var(--green-mid); border-radius: 3px; padding: 0.15rem 0.45rem; white-space: nowrap; align-self: center; }
+    .event-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.5; }
+    .event-closed { font-size: 0.8rem; color: var(--accent); margin-top: 0.3rem; font-weight: 600; }
+    .loading { color: #999; font-style: italic; font-size: 0.9rem; padding: 1rem 0; }
+
+    /* --- FOOTER override --- */
+    .site-footer { background: var(--v2-dark); }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 900px) {
+      .hero-split { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .cards-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-left { padding: 2.5rem 1.5rem; }
+      .event-card { grid-template-columns: 1fr; }
+      .inat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">⚠️ Park may close for private events — <a href="events.html">check before you visit</a></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Palma Sola Botanical Park</span>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index-b.html" class="active">Home</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="plants.html">Plants</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="venue.html">Rent the Park</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html" class="btn btn-accent" style="padding:0.35rem 0.9rem;font-size:0.8rem;">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SPLIT -->
+  <div class="hero-split">
+    <div class="hero-left">
+      <span class="hero-tag">Free · Open Daily · Bradenton FL</span>
+      <h1>Manatee County's <span>only botanical park.</span></h1>
+      <p>Ten frost-free acres, rare palms, a butterfly garden, three lakes, and a bunch of volunteers who show up every week because they love this place.</p>
+      <div class="hero-ctas">
+        <a href="visit.html" class="cta-primary">Plan your visit</a>
+        <a href="volunteer.html" class="cta-secondary">Get involved →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-title">The basics</div>
+      <div class="quick-fact">
+        <span class="fact-icon">🕗</span>
+        <div class="fact-text">
+          <strong>Open every day</strong>
+          <span>8am – Dusk · No reservation needed</span>
+        </div>
+      </div>
+      <div class="quick-fact">
+        <span class="fact-icon">💚</span>
+        <div class="fact-text">
+          <strong>Always free</strong>
+          <span>No entrance fee · Donations appreciated</span>
+        </div>
+      </div>
+      <div class="quick-fact">
+        <span class="fact-icon">📍</span>
+        <div class="fact-text">
+          <strong>9800 17th Ave NW</strong>
+          <span>Bradenton, FL 34209</span>
+        </div>
+      </div>
+      <div class="quick-fact">
+        <span class="fact-icon">🐾</span>
+        <div class="fact-text">
+          <strong>Pets welcome</strong>
+          <span>Well-behaved, on leash</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-inner">
+      <span class="marquee-item">Rare Palms</span>
+      <span class="marquee-item">Exotic Fruit Trail</span>
+      <span class="marquee-item">Butterfly Garden</span>
+      <span class="marquee-item">Three Lakes</span>
+      <span class="marquee-item">Hidden Garden Nursery</span>
+      <span class="marquee-item">Art in the Park</span>
+      <span class="marquee-item">iNaturalist Project</span>
+      <span class="marquee-item">Free Always</span>
+      <span class="marquee-item">Volunteer Powered</span>
+      <span class="marquee-item">Rare Palms</span>
+      <span class="marquee-item">Exotic Fruit Trail</span>
+      <span class="marquee-item">Butterfly Garden</span>
+      <span class="marquee-item">Three Lakes</span>
+      <span class="marquee-item">Hidden Garden Nursery</span>
+      <span class="marquee-item">Art in the Park</span>
+      <span class="marquee-item">iNaturalist Project</span>
+      <span class="marquee-item">Free Always</span>
+      <span class="marquee-item">Volunteer Powered</span>
+    </div>
+  </div>
+
+  <!-- FEATURE CARDS -->
+  <div class="cards-row">
+    <div class="feature-card">
+      <div class="card-icon">🌴</div>
+      <h3>Rare Fruit Trail</h3>
+      <p>Star fruit, dragon fruit, jackfruit, lychee, sapodilla — maintained by the Manatee Rare Fruit Council since 2008. Most visitors don't even know it's there.</p>
+      <a href="visit.html#fruit-trail">Explore the trail →</a>
+    </div>
+    <div class="feature-card" style="border-top-color: var(--v2-orange)">
+      <div class="card-icon">📷</div>
+      <h3>Log What You See</h3>
+      <p>Every observation matters. We use iNaturalist to build a real scientific record of what lives here. Pull out your phone. Take a photo. Add it.</p>
+      <a href="nature.html">See what's been found →</a>
+    </div>
+    <div class="feature-card" style="border-top-color: var(--v2-yellow)">
+      <div class="card-icon">🤝</div>
+      <h3>Thursday Workdays</h3>
+      <p>Show up. Learn plants. Pull weeds. Meet people who actually care about this place. No experience needed. Gloves provided. Sometimes kolaches.</p>
+      <a href="volunteer.html">Volunteer →</a>
+    </div>
+  </div>
+
+  <!-- Live iNat Counter -->
+  <div style="max-width:1100px;margin:0 auto 0;padding:0 1.5rem 2rem">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+      <div id="counter-b"></div>
+      <div style="background:white;border-radius:10px;padding:1.5rem;border-top:4px solid var(--v2-green);box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+        <div style="font-size:1.5rem;margin-bottom:0.6rem">📖</div>
+        <h3 style="font-family:Fraunces,serif;font-size:1.2rem;color:var(--v2-dark);margin-bottom:0.5rem">Browse the collection</h3>
+        <p style="font-size:0.9rem;color:#666;line-height:1.6;margin-bottom:1rem">Individual plant pages with photos and descriptions. Built from iNaturalist data and volunteer knowledge. 700+ species documented.</p>
+        <a href="plants.html" style="font-weight:700;font-size:0.88rem;color:var(--v2-green)">Explore plants →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENTS -->
+  <section class="events-strip">
+    <div class="events-strip-inner">
+      <div class="strip-header">
+        <h2>What's coming up</h2>
+        <a href="events.html">All events →</a>
+      </div>
+      <div id="events-b"></div>
+    </div>
+  </section>
+
+  <!-- iNAT -->
+  <section class="inat-v2">
+    <div class="inat-v2-inner">
+      <h2>Recent sightings at the park</h2>
+      <p class="lead">Real observations from real people, logged on iNaturalist. These aren't stock photos — they're from the park, taken recently. Come add yours.</p>
+      <div id="inat-b"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Palma Sola Botanical Park</div>
+        <p class="footer-text">501(c)(3) nonprofit · No government funding · No entrance fee · Volunteer powered</p>
+        <p class="footer-text" style="margin-top:0.75rem">9800 17th Ave NW, Bradenton, FL 34209<br>(941) 761-2866 · palmasolabp@aol.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Plan Your Visit</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="nature.html">Plants &amp; Nature</a></li>
+          <li><a href="venue.html">Rent the Park</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="members.html">Membership</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Palma Sola Botanical Park Foundation, Inc.</span>
+      <span>Open 8am–Dusk · Free Always</span>
+    </div>
+  </footer>
+
+  <script src="js/psbp.js"></script>
+  <script>
+    loadEvents('events-b');
+    loadINaturalist('inat-b', 6);
+    loadINatCounter('counter-b');
+  </script>
+</body>
+</html>

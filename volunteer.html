@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer — Palma Sola Botanical Park</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .vol-hero { background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%); color: var(--sand); padding: 3rem 1.5rem; }
+    .vol-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .vol-hero h1 { font-family: var(--font-display); font-size: 2.4rem; color: var(--sand); margin-bottom: 0.75rem; }
+    .vol-hero p { color: rgba(245,239,224,0.85); font-size: 1.1rem; max-width: 600px; line-height: 1.65; }
+    .vol-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-top: 2.5rem; }
+    .role-card { display: flex; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid #eee; }
+    .role-card:last-child { border-bottom: none; }
+    .role-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .role-body h3 { font-family: var(--font-display); font-size: 1.05rem; color: var(--green-deep); margin-bottom: 0.3rem; }
+    .role-body p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+    .workday-highlight { background: var(--green-deep); color: var(--sand); border-radius: 10px; padding: 2rem; margin-bottom: 1.5rem; }
+    .workday-highlight h2 { font-family: var(--font-display); font-size: 1.3rem; color: var(--sand); margin-bottom: 0.75rem; }
+    .workday-highlight p { color: rgba(245,239,224,0.85); font-size: 0.92rem; line-height: 1.7; margin-bottom: 0.75rem; }
+    .contact-box { background: var(--sand); border-radius: 8px; padding: 1.5rem; }
+    .contact-box h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--green-deep); margin-bottom: 0.75rem; }
+    .contact-box p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem; }
+    @media (max-width: 768px) { .vol-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Palma Sola Botanical Park</span>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="plants.html">Plants</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="volunteer.html" class="active">Volunteer</a></li>
+        <li><a href="venue.html">Rent the Park</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html" class="btn btn-accent" style="padding:0.35rem 0.9rem;font-size:0.8rem;">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="vol-hero">
+    <div class="vol-hero-inner">
+      <h1>Volunteer</h1>
+      <p>This park runs on people who show up. No budget, no staff army — just a community that decided this place was worth taking care of. Come be part of that.</p>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="vol-grid">
+      <div>
+        <p style="font-size:1.05rem;color:var(--text-light);margin-bottom:2rem;line-height:1.75">Many of our volunteers come weekly on specific days. Others drop in whenever they can. We'll work with whatever you've got. You don't need to know anything about plants to start — you just need to show up.</p>
+
+        <h2 class="section-head">Thursday Morning Workdays</h2>
+        <p>Our Thursday workdays are the heartbeat of the park. High school students, retirees, longtime Bradenton residents, people who just moved here — all showing up together from 9am to noon. We weed, propagate, plant, identify, maintain, and occasionally argue about whether a vine is native. It's genuinely fun.</p>
+        <p>Bring gloves if you have them. We'll supply tools, water, snacks, and fresh air. <strong>9am–Noon · All ability levels welcome.</strong></p>
+
+        <h2 class="section-head" style="margin-top:2.5rem">Ways to help</h2>
+
+        <div class="role-card">
+          <span class="role-icon">🌱</span>
+          <div class="role-body">
+            <h3>Gardening &amp; Nursery</h3>
+            <p>Planting, propagating cuttings, weeding, trimming, yard waste cleanup. The core of what keeps the park looking the way it does.</p>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <span class="role-icon">🔨</span>
+          <div class="role-body">
+            <h3>Handyman Maintenance</h3>
+            <p>Painting, light carpentry, pressure washing, general repairs. If you have a useful skill, we have a use for it.</p>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <span class="role-icon">📱</span>
+          <div class="role-body">
+            <h3>iNaturalist &amp; Documentation</h3>
+            <p>Log plant and wildlife observations using iNaturalist. Help us build the scientific record of what lives here. Every confirmed sighting matters.</p>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <span class="role-icon">🎪</span>
+          <div class="role-body">
+            <h3>Community Outreach</h3>
+            <p>Represent the park at the Farmer's Market, Chamber events, the County Fair. If you like talking to people about something you love, this is your job.</p>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <span class="role-icon">📋</span>
+          <div class="role-body">
+            <h3>Office Support</h3>
+            <p>Mailers, filing, data entry, thank you cards, graphic design. Remote-friendly options available.</p>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <span class="role-icon">🎓</span>
+          <div class="role-body">
+            <h3>Education &amp; Tours</h3>
+            <p>Lead classes, workshops, field trips, and guided tours. Help us share what this place knows.</p>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <span class="role-icon">🌺</span>
+          <div class="role-body">
+            <h3>Plant Sales</h3>
+            <p>Spring and Fall plant sales (typically March and October). Setup, sales floor, breakdown. Great energy, good crowds.</p>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <span class="role-icon">🎄</span>
+          <div class="role-body">
+            <h3>Winter Nights Under the Lights</h3>
+            <p>Our biggest annual event each December. All hands on deck — and it's genuinely magical. Over 8,500 visitors last year.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="workday-highlight">
+          <h2>🗓 Thursday Workdays</h2>
+          <p><strong>9am – Noon</strong><br>All ability levels welcome</p>
+          <p>We supply tools, water, snacks, and fresh air. You bring whatever you've got.</p>
+          <p>9800 17th Ave NW, Bradenton</p>
+        </div>
+
+        <div class="contact-box">
+          <h3>Ready to volunteer?</h3>
+          <p>Just show up on a Thursday morning. Or reach out first if you'd like to talk about what you'd like to do.</p>
+          <p><strong>(941) 761-2866</strong></p>
+          <p><a href="mailto:palmasolabp@aol.com">palmasolabp@aol.com</a></p>
+          <a href="mailto:palmasolabp@aol.com?subject=Volunteer Interest" class="btn btn-primary" style="margin-top:0.75rem;width:100%;text-align:center">Get in touch</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Palma Sola Botanical Park</div>
+        <p class="footer-text">501(c)(3) nonprofit · Bradenton, Florida</p>
+        <p class="footer-text" style="margin-top:0.75rem">9800 17th Ave NW · (941) 761-2866</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Plan Your Visit</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="nature.html">Plants &amp; Nature</a></li>
+          <li><a href="venue.html">Rent the Park</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="members.html">Membership</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Palma Sola Botanical Park Foundation, Inc.</span>
+      <span>Open 8am–Dusk · Free Always</span>
+    </div>
+  </footer>
+
+  <script src="js/psbp.js"></script>
+</body>
+</html>

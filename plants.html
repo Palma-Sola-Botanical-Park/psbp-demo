@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Collection — Palma Sola Botanical Park</title>
+  <meta name="description" content="Browse the documented plant collection at Palma Sola Botanical Park — 460+ species and growing. Live data from iNaturalist.">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .plants-hero {
+      background: linear-gradient(150deg, #1e3a08 0%, #2d5016 50%, #3d6e1f 100%);
+      padding: 4rem 1.5rem 3.5rem;
+      color: var(--sand);
+    }
+
+    .plants-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .plants-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--sand);
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .plants-hero p {
+      color: rgba(245,239,224,0.85);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ---- COLLECTION GRID ---- */
+    .collection-section {
+      max-width: 1100px;
+      margin: 3.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .collection-intro {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    .collection-lead {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--green-deep);
+      font-style: italic;
+      line-height: 1.45;
+      margin-bottom: 1rem;
+    }
+
+    .collection-body {
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .collection-body p { margin-bottom: 1rem; }
+
+    /* ---- FEATURED PLANTS ---- */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .plant-card {
+      border: 1px solid #dde;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--white);
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-decoration: none;
+      display: block;
+      color: var(--text);
+    }
+
+    .plant-card:hover {
+      box-shadow: 0 6px 24px rgba(45,80,22,0.14);
+      transform: translateY(-3px);
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .plant-card-img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      background: #e0edd4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .plant-card-body { padding: 1.1rem 1.25rem 1.25rem; }
+
+    .plant-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--green-deep);
+      margin-bottom: 0.15rem;
+    }
+
+    .plant-sci {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #888;
+      margin-bottom: 0.6rem;
+    }
+
+    .plant-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.18rem 0.5rem;
+      border-radius: 3px;
+      margin-right: 0.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .tag-native { background: #d4edda; color: #1a5c2a; }
+    .tag-exotic { background: #fde8cc; color: #7a3800; }
+    .tag-rare { background: #e8d4f5; color: #4a1a7a; }
+    .tag-fruit { background: #fff3cd; color: #7a5c00; }
+
+    .plant-desc {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.55;
+      margin-top: 0.5rem;
+    }
+
+    /* ---- CTA STRIP ---- */
+    .cta-strip {
+      background: var(--sand);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .cta-strip-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--green-deep);
+      margin-bottom: 0.4rem;
+    }
+
+    .cta-strip-text p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      max-width: 480px;
+    }
+
+    /* ---- CONTRIBUTE SECTION ---- */
+    .contribute-section {
+      background: #f0f7e8;
+      border-top: 3px solid var(--green-light);
+      padding: 4rem 1.5rem;
+    }
+
+    .contribute-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contribute-text h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--green-deep);
+      margin-bottom: 0.75rem;
+    }
+
+    .contribute-text p {
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .contribute-steps {
+      list-style: none;
+      padding: 0;
+      counter-reset: steps;
+    }
+
+    .contribute-steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid #d0e8b8;
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.55;
+    }
+
+    .contribute-steps li:last-child { border-bottom: none; }
+
+    .contribute-steps li::before {
+      content: counter(steps);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* ---- SIDEBAR in counter area ---- */
+    .plants-sidebar {
+      position: sticky;
+      top: 70px;
+    }
+
+    .sidebar-box {
+      background: var(--sand);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sidebar-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--green-deep);
+      margin-bottom: 0.6rem;
+    }
+
+    .sidebar-box p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .plants-hero-inner { grid-template-columns: 1fr; }
+      .collection-intro { grid-template-columns: 1fr; }
+      .contribute-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .cta-strip { flex-direction: column; align-items: flex-start; }
+      .plants-sidebar { position: static; }
+    }
+
+    @media (max-width: 600px) {
+      .featured-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Palma Sola Botanical Park</span>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="plants.html" class="active">Plants</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="venue.html">Rent the Park</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html" class="btn btn-accent" style="padding:0.35rem 0.9rem;font-size:0.8rem;">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO with live counter sidebar -->
+  <div class="plants-hero">
+    <div class="plants-hero-inner">
+      <div>
+        <h1>The Plant Collection</h1>
+        <p>Ten frost-free acres. Rare palms. Exotic fruit trees. Native Florida species. A butterfly garden. Three lakes. And a scientific record that grows every time a visitor pulls out their phone and takes a photo.</p>
+        <div class="hero-actions">
+          <a href="https://palma-sola-botanical-park.github.io/plants/index.html"
+             target="_blank" rel="noopener"
+             class="btn btn-primary">Browse the collection →</a>
+          <a href="https://www.inaturalist.org/projects/palma-sola-botanical-park"
+             target="_blank" rel="noopener"
+             class="btn btn-outline" style="border-color:var(--green-light);color:var(--green-light)">View on iNaturalist</a>
+        </div>
+      </div>
+      <!-- Live counter widget -->
+      <div id="hero-counter"></div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="collection-section">
+    <div class="collection-intro">
+      <div>
+        <p class="collection-lead">"We are still learning what lives here. That's not a gap in our knowledge — it's an invitation."</p>
+        <div class="collection-body">
+          <p>The park began in 1990 as a county palm nursery. The rare palm collection reflects that origin — specimens you simply won't find in cultivation anywhere else in Manatee County thrive here because of the park's uniquely frost-free microclimate.</p>
+          <p>In 2008, the Manatee Rare Fruit Council established the Exotic Fruit Trail: star fruit, dragon fruit, jackfruit, lychee, sapodilla, tamarind, guava, persimmon, pomelo, and over two dozen other species on a single walk. Most visitors walk right past it.</p>
+          <p>The butterfly garden uses native Florida host plants — designed not just to attract butterflies, but to sustain them through their full life cycle. Come in the morning. Bring a camera. Give it ten minutes of quiet and you'll understand why this place matters.</p>
+          <p>Our iNaturalist project is where the park's scientific record lives. Every observation — plant, bird, insect, fungus — adds to what we know about this ten acres. The data is public, permanent, and connected to the global biodiversity record.</p>
+        </div>
+      </div>
+      <div class="plants-sidebar">
+        <div id="sidebar-counter"></div>
+        <div class="sidebar-box" style="margin-top:1.25rem">
+          <h3>Browse by category</h3>
+          <p>The online plant directory is organized by collection — palms, fruit trail, butterfly garden, native species, and more.</p>
+          <a href="https://palma-sola-botanical-park.github.io/plants/index.html"
+             target="_blank" rel="noopener"
+             class="btn btn-outline" style="font-size:0.85rem;display:block;text-align:center">Open plant directory →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURED PLANTS -->
+    <h2 class="section-head">Featured plants</h2>
+    <p style="color:var(--text-light);margin-bottom:0.5rem">A handful of what makes this place worth visiting. The full directory has hundreds more.</p>
+
+    <div class="featured-grid">
+
+      <a href="https://palma-sola-botanical-park.github.io/plants/PSBP-00001-Tree-Crin..."
+         class="plant-card" target="_blank" rel="noopener">
+        <div class="plant-card-img">🌴</div>
+        <div class="plant-card-body">
+          <div class="plant-name">Bismarck Palm</div>
+          <div class="plant-sci">Bismarckia nobilis</div>
+          <span class="plant-tag tag-rare">Rare</span>
+          <span class="plant-tag tag-exotic">Exotic</span>
+          <p class="plant-desc">One of the most striking palms in the collection. The silver-blue fronds are unlike anything else in the park. Native to Madagascar.</p>
+        </div>
+      </a>
+
+      <a href="https://palma-sola-botanical-park.github.io/plants/index.html"
+         class="plant-card" target="_blank" rel="noopener">
+        <div class="plant-card-img">🍈</div>
+        <div class="plant-card-body">
+          <div class="plant-name">Jackfruit</div>
+          <div class="plant-sci">Artocarpus heterophyllus</div>
+          <span class="plant-tag tag-fruit">Fruit Trail</span>
+          <span class="plant-tag tag-exotic">Exotic</span>
+          <p class="plant-desc">The largest tree-borne fruit in the world. The specimens on the Exotic Fruit Trail are productive and impressive. Many visitors have never seen one.</p>
+        </div>
+      </a>
+
+      <a href="https://palma-sola-botanical-park.github.io/plants/index.html"
+         class="plant-card" target="_blank" rel="noopener">
+        <div class="plant-card-img">🦋</div>
+        <div class="plant-card-body">
+          <div class="plant-name">Firebush</div>
+          <div class="plant-sci">Hamelia patens</div>
+          <span class="plant-tag tag-native">Native</span>
+          <p class="plant-desc">A Florida native that's one of the best butterfly magnets in the Southeast. Blooms nearly year-round. Core plant of the butterfly garden.</p>
+        </div>
+      </a>
+
+      <a href="https://palma-sola-botanical-park.github.io/plants/index.html"
+         class="plant-card" target="_blank" rel="noopener">
+        <div class="plant-card-img">🌺</div>
+        <div class="plant-card-body">
+          <div class="plant-name">Royal Poinciana</div>
+          <div class="plant-sci">Delonix regia</div>
+          <span class="plant-tag tag-exotic">Exotic</span>
+          <p class="plant-desc">In full bloom in late spring, it stops people in their tracks. The park's specimen is mature and spectacular. Hard to photograph badly.</p>
+        </div>
+      </a>
+
+      <a href="https://palma-sola-botanical-park.github.io/plants/index.html"
+         class="plant-card" target="_blank" rel="noopener">
+        <div class="plant-card-img">🌿</div>
+        <div class="plant-card-body">
+          <div class="plant-name">Beach Sunflower</div>
+          <div class="plant-sci">Helianthus debilis</div>
+          <span class="plant-tag tag-native">Native</span>
+          <p class="plant-desc">Salt-tolerant native groundcover, planted along the park's pond margins. Blooms constantly. Beloved by native bees and the volunteers who planted it.</p>
+        </div>
+      </a>
+
+      <a href="https://palma-sola-botanical-park.github.io/plants/index.html"
+         class="plant-card" target="_blank" rel="noopener">
+        <div class="plant-card-img">🍋</div>
+        <div class="plant-card-body">
+          <div class="plant-name">Lychee</div>
+          <div class="plant-sci">Litchi chinensis</div>
+          <span class="plant-tag tag-fruit">Fruit Trail</span>
+          <p class="plant-desc">Not easy to grow in Florida without a frost-free microclimate. The park has it. Come in June when the fruit is ripe.</p>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="cta-strip">
+      <div class="cta-strip-text">
+        <h3>There are hundreds more.</h3>
+        <p>The online plant directory documents each species with photos, descriptions, native status, and location within the park. Built from iNaturalist data and volunteer knowledge.</p>
+      </div>
+      <a href="https://palma-sola-botanical-park.github.io/plants/index.html"
+         target="_blank" rel="noopener"
+         class="btn btn-primary" style="white-space:nowrap;flex-shrink:0">Browse all plants →</a>
+    </div>
+  </div>
+
+  <!-- HOW TO CONTRIBUTE -->
+  <section class="contribute-section">
+    <div class="contribute-inner">
+      <div class="contribute-text">
+        <h2>Your observation matters.</h2>
+        <p>Every photo you take in the park — of a plant, a bird, a butterfly, a fungus — can become a permanent part of the park's scientific record. iNaturalist makes that possible with your phone.</p>
+        <p>The live counter at the top of this page updates in real time. When you log an observation, you'll see it there. The park's volunteers notice. Bev notices. It adds up.</p>
+        <a href="https://www.inaturalist.org/projects/palma-sola-botanical-park"
+           target="_blank" rel="noopener"
+           class="btn btn-primary" style="margin-top:0.5rem">Join the iNaturalist project →</a>
+      </div>
+      <div>
+        <h3 class="sub-head" style="margin-top:0">How to add an observation</h3>
+        <ol class="contribute-steps">
+          <li>Download the <strong>iNaturalist app</strong> — free on iOS and Android</li>
+          <li>Walk through the park and photograph anything interesting. Plants, insects, birds, fungi — anything.</li>
+          <li>Open the app and submit your photo. AI and community volunteers will help identify it.</li>
+          <li>Once two experts agree on an ID, it becomes <strong>Research Grade</strong> — part of the global biodiversity record.</li>
+          <li>Your observation shows up on the park's project page and in the live counter on this site.</li>
+        </ol>
+        <p style="font-size:0.88rem;color:var(--text-light);margin-top:1rem">You don't need to know what something is to photograph it. That's what the community is for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Palma Sola Botanical Park</div>
+        <p class="footer-text">501(c)(3) nonprofit · Bradenton, Florida · Free always</p>
+        <p class="footer-text" style="margin-top:0.75rem">9800 17th Ave NW · (941) 761-2866 · palmasolabp@aol.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Plan Your Visit</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="plants.html">Plant Collection</a></li>
+          <li><a href="nature.html">iNaturalist</a></li>
+          <li><a href="venue.html">Rent the Park</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="members.html">Membership</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Palma Sola Botanical Park Foundation, Inc.</span>
+      <span>Open 8am–Dusk · Free Always</span>
+    </div>
+  </footer>
+
+  <script src="js/psbp.js"></script>
+  <script>
+    loadINatCounter('hero-counter');
+    loadINatCounter('sidebar-counter');
+  </script>
+</body>
+</html>

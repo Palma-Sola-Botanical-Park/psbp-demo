@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — Palma Sola Botanical Park</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .events-page-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 4rem;
+      margin-top: 2rem;
+    }
+
+    .events-notice {
+      background: #fff8e1;
+      border-left: 4px solid var(--earth);
+      padding: 1rem 1.25rem;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 2rem;
+      font-size: 0.92rem;
+      color: #5a4000;
+    }
+
+    /* Full-size event cards */
+    .event-card {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 1.25rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .event-card:last-child { border-bottom: none; }
+
+    .event-date-col { padding-top: 0.1rem; }
+
+    .event-date {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--earth);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .event-time {
+      display: block;
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 0.25rem;
+    }
+
+    .event-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+
+    .event-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .event-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: white;
+      border-radius: 3px;
+      padding: 0.15rem 0.45rem;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    .event-desc {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .event-closed {
+      font-size: 0.82rem;
+      color: var(--accent);
+      margin-top: 0.4rem;
+      font-weight: 600;
+    }
+
+    .events-section {}
+
+    .past-events-toggle {
+      margin-top: 2.5rem;
+    }
+
+    .past-events-toggle summary {
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      padding: 0.75rem 0;
+      font-weight: 600;
+    }
+
+    .past-events-toggle .event-card.past { opacity: 0.6; }
+
+    .demo-notice {
+      background: #fff8e1;
+      border-left: 3px solid var(--earth);
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .loading {
+      color: #999;
+      font-style: italic;
+      font-size: 0.9rem;
+      padding: 1rem 0;
+    }
+
+    /* Sidebar */
+    .sidebar-sticky {
+      position: sticky;
+      top: 70px;
+    }
+
+    .info-box {
+      background: var(--sand);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--green-deep);
+      margin-bottom: 0.75rem;
+    }
+
+    .info-box p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+
+    .info-box a { font-size: 0.88rem; color: var(--green-mid); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .events-page-grid { grid-template-columns: 1fr; }
+      .sidebar-sticky { position: static; }
+      .event-card { grid-template-columns: 1fr; }
+      .event-date-col { padding-bottom: 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Palma Sola Botanical Park</span>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="plants.html">Plants</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="venue.html">Rent the Park</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html" class="btn btn-accent" style="padding:0.35rem 0.9rem;font-size:0.8rem;">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <h1 class="page-title">Events</h1>
+    <p class="page-subtitle">Plant sales, fundraisers, workdays, holiday lights, and more. Check here before visiting on weekends — we sometimes close for private events.</p>
+
+    <div class="events-notice">
+      🔴 <strong>Park closure notice:</strong> When an event lists "Park closed to general visitors," the park will be closed to drop-in guests that day. We recommend checking this page before weekend visits.
+    </div>
+
+    <div class="events-page-grid">
+      <div>
+        <div id="events-main"></div>
+      </div>
+
+      <aside>
+        <div class="sidebar-sticky">
+          <div class="info-box">
+            <h3>🌿 Nursery Schedule</h3>
+            <p>Our Hidden Garden Nursery sells volunteer-propagated plants. Open Tuesdays and Saturdays, 9am–Noon, October through May.</p>
+            <a href="visit.html#nursery">More about the nursery →</a>
+          </div>
+
+          <div class="info-box">
+            <h3>📷 Art in the Park</h3>
+            <p>A different local artist fills the Galleria each month. New artist receptions are usually the last Sunday of the month, 4–7pm.</p>
+          </div>
+
+          <div class="info-box" style="background:var(--green-deep); color:var(--sand);">
+            <h3 style="color:var(--sand)">🎄 Winter Lights</h3>
+            <p style="color:rgba(245,239,224,0.8)">Our biggest annual event — acres of holiday lights, food trucks, Santa, and live music. Happens each December. Over 8,500 visitors last year.</p>
+          </div>
+
+          <div class="info-box">
+            <h3>Rent the Park</h3>
+            <p>Weddings, parties, and private events are how we keep the lights on. We close to the public when a rental is in progress.</p>
+            <a href="venue.html">Venue rental info →</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Palma Sola Botanical Park</div>
+        <p class="footer-text">501(c)(3) nonprofit · Bradenton, Florida · No government funding · Free always</p>
+        <p class="footer-text" style="margin-top:0.75rem">9800 17th Ave NW · (941) 761-2866 · palmasolabp@aol.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Plan Your Visit</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="nature.html">Plants &amp; Nature</a></li>
+          <li><a href="venue.html">Rent the Park</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="members.html">Membership</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Palma Sola Botanical Park Foundation, Inc.</span>
+      <span>Open 8am–Dusk · Free Always</span>
+    </div>
+  </footer>
+
+  <script src="js/psbp.js"></script>
+  <script>loadEvents('events-main');</script>
+</body>
+</html>

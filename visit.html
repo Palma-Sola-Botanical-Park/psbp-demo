@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit — Palma Sola Botanical Park</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .visit-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-top: 1rem; }
+    .essentials-card { background: var(--green-deep); color: var(--sand); border-radius: 10px; padding: 2rem; margin-bottom: 2rem; }
+    .essentials-card h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--sand); margin-bottom: 1rem; }
+    .essential-item { display: flex; gap: 0.75rem; margin-bottom: 1rem; align-items: flex-start; }
+    .essential-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .essential-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-light); font-weight: 700; display: block; margin-bottom: 0.1rem; }
+    .essential-val { font-size: 0.95rem; color: rgba(245,239,224,0.9); }
+    .map-embed { border-radius: 8px; overflow: hidden; margin: 1rem 0; }
+    .map-embed iframe { width: 100%; height: 240px; border: none; display: block; }
+    .info-block { background: var(--sand); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.25rem; }
+    .info-block h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--green-deep); margin-bottom: 0.6rem; }
+    .info-block p { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; margin-bottom: 0.5rem; }
+    .warning-box { background: #fff3e0; border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.92rem; color: #5a3000; }
+    @media (max-width: 768px) { .visit-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Palma Sola Botanical Park</span>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visit.html" class="active">Visit</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="plants.html">Plants</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="venue.html">Rent the Park</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html" class="btn btn-accent" style="padding:0.35rem 0.9rem;font-size:0.8rem;">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <h1 class="page-title">Plan Your Visit</h1>
+    <p class="page-subtitle">Free admission, every day. No tickets, no reservations — just show up. 9800 17th Ave NW, Bradenton, FL 34209.</p>
+
+    <div class="warning-box">
+      ⚠️ <strong>Check before you come on weekends.</strong> We sometimes close for weddings and private events. <a href="events.html">Check the events list</a> to confirm the park will be open.
+    </div>
+
+    <div class="visit-grid">
+      <div>
+        <div class="essentials-card">
+          <h2>The basics</h2>
+          <div class="essential-item">
+            <span class="essential-icon">🕗</span>
+            <div><span class="essential-label">Hours</span><span class="essential-val">Open daily, 8am to Dusk</span></div>
+          </div>
+          <div class="essential-item">
+            <span class="essential-icon">💚</span>
+            <div><span class="essential-label">Admission</span><span class="essential-val">Free always. Donations appreciated — there are 3 donation boxes on site.</span></div>
+          </div>
+          <div class="essential-item">
+            <span class="essential-icon">🐾</span>
+            <div><span class="essential-label">Pets</span><span class="essential-val">Well-behaved pets welcome on leash. Please clean up after them.</span></div>
+          </div>
+          <div class="essential-item">
+            <span class="essential-icon">📍</span>
+            <div><span class="essential-label">Address</span><span class="essential-val">9800 17th Ave NW, Bradenton, FL 34209</span></div>
+          </div>
+          <div class="essential-item">
+            <span class="essential-icon">📞</span>
+            <div><span class="essential-label">Phone</span><span class="essential-val">(941) 761-2866</span></div>
+          </div>
+        </div>
+
+        <h2 class="section-head">What to see</h2>
+
+        <h3 class="sub-head">Rare Palm Collection</h3>
+        <p>The park's roots as a county palm nursery are visible everywhere. Rare specimens flourish in our protected frost-free microclimate — varieties that simply can't survive elsewhere in Manatee County.</p>
+
+        <h3 class="sub-head" id="fruit-trail">Exotic Fruit Trail</h3>
+        <p>Planted by the Manatee Rare Fruit Council in 2008 and maintained ever since. Star fruit, dragon fruit, fig, guava, jackfruit, lychee, persimmon, pomelo, sapodilla, tamarind, and more than a dozen others. Take the slow walk. Read the signs. Half the people who visit never find it.</p>
+
+        <h3 class="sub-head">Butterfly Garden</h3>
+        <p>Native Florida host plants for native Florida butterflies. Come in the morning. Bring kids. Bring a camera. Give it ten quiet minutes and you'll see something.</p>
+
+        <h3 class="sub-head">Three Lakes</h3>
+        <p>Wood storks, great blue herons, anhingas, turtles. The lakes are the quiet heart of the park. Log what you see on <a href="nature.html">iNaturalist</a>.</p>
+
+        <h3 class="sub-head" id="nursery">Hidden Garden Nursery</h3>
+        <p>Tucked behind the butterfly patch near the west entrance. Volunteer-grown plants propagated from our own grounds — reasonably priced, every dollar stays in the park.</p>
+        <p><strong>Open Tuesdays and Saturdays, 9am–Noon · October through May</strong></p>
+
+        <h3 class="sub-head" id="art">Art in the Park</h3>
+        <p>The Galleria building hosts a rotating exhibit of local amateur and professional artists — a different artist or guild every month. Watercolor, oil, pastel, photography, sculpture. All work is for sale, and a generous portion of proceeds supports the park. New artist receptions are typically held the last Sunday of the month.</p>
+        <p>If you're an artist interested in exhibiting, <a href="about.html#contact">contact us</a>.</p>
+
+        <h2 class="section-head">Group Tours</h2>
+        <p>For groups of 10 or more, please call our office at (941) 761-2866 to schedule. Suggested donation is $10 per person to support the park.</p>
+
+        <h2 class="section-head">Photography</h2>
+        <p>Recreational photographers are welcome — share your photos and tag us! For professional or commercial photography, please contact the office first to discuss our policy.</p>
+      </div>
+
+      <aside>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.0!2d-82.6600!3d27.5135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDMwJzQ5LjAiTiA4MsKwMzknMzQuMSJX!5e0!3m2!1sen!2sus!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.25rem">9800 17th Ave NW, Bradenton, FL 34209</p>
+
+        <div class="info-block" style="margin-top:1.5rem">
+          <h3>Before you visit</h3>
+          <p>We sometimes close to the public for weddings and other private events, especially on weekends. Always worth a quick check.</p>
+          <a href="events.html" class="btn btn-outline" style="font-size:0.85rem;margin-top:0.25rem">Check the calendar →</a>
+        </div>
+
+        <div class="info-block">
+          <h3>Support us</h3>
+          <p>No entrance fee, no government subsidy. Your donation keeps this park free for everyone.</p>
+          <a href="donate.html" class="btn btn-primary" style="font-size:0.85rem">Donate online →</a>
+        </div>
+
+        <div class="info-block">
+          <h3>Become a member</h3>
+          <p>Annual memberships from $50. Includes reciprocal access to 380+ botanical parks nationwide.</p>
+          <a href="members.html" class="btn btn-outline" style="font-size:0.85rem">See membership options →</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Palma Sola Botanical Park</div>
+        <p class="footer-text">501(c)(3) nonprofit · Bradenton, Florida</p>
+        <p class="footer-text" style="margin-top:0.75rem">9800 17th Ave NW · (941) 761-2866 · palmasolabp@aol.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Plan Your Visit</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="nature.html">Plants &amp; Nature</a></li>
+          <li><a href="venue.html">Rent the Park</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="members.html">Membership</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Palma Sola Botanical Park Foundation, Inc.</span>
+      <span>Open 8am–Dusk · Free Always</span>
+    </div>
+  </footer>
+
+  <script src="js/psbp.js"></script>
+</body>
+</html>

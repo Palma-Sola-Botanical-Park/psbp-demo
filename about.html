@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Palma Sola Botanical Park</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-top: 1rem; }
+    .board-list { columns: 2; column-gap: 2rem; list-style: none; margin: 0.5rem 0 1.5rem; }
+    .board-list li { font-size: 0.92rem; color: var(--text-light); padding: 0.25rem 0; break-inside: avoid; }
+    .board-list li strong { color: var(--text); }
+    .staff-item { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid #eee; }
+    .staff-item:last-child { border-bottom: none; }
+    .affiliates { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 1rem 0; }
+    .affiliate-chip { background: var(--sand); border-radius: 6px; padding: 0.5rem 1rem; font-size: 0.85rem; color: var(--text-light); }
+    .sidebar-box { background: var(--sand); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .sidebar-box h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--green-deep); margin-bottom: 0.6rem; }
+    .sidebar-box p { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; margin-bottom: 0.5rem; }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } .board-list { columns: 1; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Palma Sola Botanical Park</span>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="plants.html">Plants</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="venue.html">Rent the Park</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="donate.html" class="btn btn-accent" style="padding:0.35rem 0.9rem;font-size:0.8rem;">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <h1 class="page-title">About Us</h1>
+    <p class="page-subtitle">The story of how a surplus county nursery became Manatee County's only botanical park.</p>
+
+    <div class="about-grid">
+      <div>
+        <h2 class="section-head">Our History</h2>
+        <p>Palma Sola Botanical Park sits in the "Old Palma Sola" section of northwest Bradenton — an area with a rich history stretching from the Timucuan Indians through the Spanish Conquistadors to the present.</p>
+        <p>In 1990, local citizens and community groups looked at a 10-acre parcel of surplus county land — the former Manatee County Nursery — and saw something worth saving. The Bradenton Herald ran editorials. Neighbors organized. A movement formed around a simple idea: this land should be a botanical park, open to everyone, free forever.</p>
+        <p>In 1993, the <strong>Palma Sola Botanical Park Foundation, Inc.</strong> was incorporated as a 501(c)(3) nonprofit. In 1996, a formal agreement with Manatee County Government established the park as a joint venture between the county parks department and the nonprofit foundation.</p>
+        <p>Since then, the park has grown steadily — adding the Galleria building in 2000 for weddings, events, and art exhibitions, the Manatee Rare Fruit Council's exotic fruit collection in 2008, and most recently a new composite deck and ramp funded by community donations.</p>
+        <p>Today the park holds collections of rare palms, subtropical plants, and exotic fruit trees that thrive in its uniquely frost-free microclimate. It is open seven days a week, free of charge, supported entirely by donations, memberships, and venue rentals. No government subsidy. No entrance fee. Never has been, never will be.</p>
+
+        <h2 class="section-head">Our Mission</h2>
+        <p>To serve as a unique community resource dedicated to providing an interactive learning environment that fosters an appreciation of nature and landscaping, preserves our natural resources, and promotes environmental education.</p>
+
+        <h2 class="section-head">Staff</h2>
+        <div class="staff-item">
+          <div>
+            <strong>Beverly Zoller Burdette</strong> — Executive Director
+          </div>
+        </div>
+        <div class="staff-item">
+          <div>
+            <strong>Jennifer Gunter</strong> — Event Venue Rentals (mornings)
+          </div>
+        </div>
+
+        <h2 class="section-head">Board of Directors</h2>
+        <ul class="board-list">
+          <li><strong>Kristin Mead</strong> — President</li>
+          <li><strong>Michael Jaster</strong> — Vice President &amp; Treasurer</li>
+          <li><strong>Josh Beyer</strong> — Secretary</li>
+          <li>Barney Hass</li>
+          <li>Pam Kanarr</li>
+          <li>John Lowenberg</li>
+          <li>Tyler Pullen</li>
+          <li>Aedan Stockdale</li>
+          <li><strong>Nick Baden</strong> — Emeritus</li>
+        </ul>
+
+        <h2 class="section-head">Affiliations</h2>
+        <p>Palma Sola Botanical Park is sponsored by the Bradenton Area Convention &amp; Visitors Bureau with funds generated by the Florida Arts License Plate.</p>
+        <div class="affiliates">
+          <div class="affiliate-chip">Manatee Chamber of Commerce</div>
+          <div class="affiliate-chip">Bradenton Area CVB</div>
+          <div class="affiliate-chip">American Horticultural Society</div>
+          <div class="affiliate-chip">Manatee Rare Fruit Council</div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="sidebar-box">
+          <h3 id="contact">Contact Us</h3>
+          <p><strong>9800 17th Ave NW</strong><br>Bradenton, FL 34209</p>
+          <p><strong>(941) 761-2866</strong></p>
+          <p><a href="mailto:palmasolabp@aol.com">palmasolabp@aol.com</a></p>
+        </div>
+        <div class="sidebar-box">
+          <h3>Support the Park</h3>
+          <p>We receive no government funding. Every donation and membership goes directly to keeping this park free and open.</p>
+          <a href="donate.html" class="btn btn-primary" style="display:block;text-align:center;margin-bottom:0.75rem">Donate</a>
+          <a href="members.html" class="btn btn-outline" style="display:block;text-align:center">Become a Member</a>
+        </div>
+        <div class="sidebar-box">
+          <h3>Volunteer</h3>
+          <p>The park is powered by people who show up every week. Thursday mornings, 9am–Noon. All welcome.</p>
+          <a href="volunteer.html" class="btn btn-outline" style="display:block;text-align:center">Get involved</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Palma Sola Botanical Park</div>
+        <p class="footer-text">501(c)(3) nonprofit · Bradenton, Florida</p>
+        <p class="footer-text" style="margin-top:0.75rem">9800 17th Ave NW · (941) 761-2866 · palmasolabp@aol.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Plan Your Visit</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="nature.html">Plants &amp; Nature</a></li>
+          <li><a href="venue.html">Rent the Park</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="members.html">Membership</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Palma Sola Botanical Park Foundation, Inc.</span>
+      <span>Open 8am–Dusk · Free Always</span>
+    </div>
+  </footer>
+  <script src="js/psbp.js"></script>
+</body>
+</html>

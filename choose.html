@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSBP Site Demo — Pick a Design</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    body { background: #1a1a1a; color: #eee; font-family: var(--font-body); }
+    .chooser { max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; }
+    h1 { font-family: var(--font-display); font-size: 2rem; color: white; margin-bottom: 0.5rem; }
+    .sub { color: #aaa; margin-bottom: 3rem; font-size: 1rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .theme-card { background: #2a2a2a; border-radius: 10px; overflow: hidden; border: 2px solid transparent; transition: border-color 0.2s, transform 0.2s; cursor: pointer; text-decoration: none; display: block; }
+    .theme-card:hover { border-color: var(--green-light); transform: translateY(-4px); text-decoration: none; }
+    .theme-preview { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .preview-a { background: linear-gradient(135deg, #2d5016, #4a7c2f, #1e4510); }
+    .preview-b { background: linear-gradient(135deg, #1c2b0e, #3a7d1e); }
+    .preview-c { background: linear-gradient(135deg, #3d2b1f, #4d6b2e, #6b4c2a); }
+    .theme-info { padding: 1.25rem; }
+    .theme-name { font-family: var(--font-display); font-size: 1.2rem; color: white; margin-bottom: 0.3rem; }
+    .theme-desc { font-size: 0.85rem; color: #aaa; line-height: 1.5; margin-bottom: 1rem; }
+    .theme-link { font-size: 0.85rem; color: var(--green-light); font-weight: 600; }
+    .note { margin-top: 3rem; background: #2a2a2a; border-radius: 8px; padding: 1.5rem; font-size: 0.9rem; color: #aaa; line-height: 1.7; }
+    .note strong { color: white; }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="chooser">
+    <h1>Palma Sola Botanical Park — Design Demo</h1>
+    <p class="sub">Three homepage directions. Same content, same functions, different feel. Click any to explore the full site.</p>
+
+    <div class="grid">
+      <a href="index.html" class="theme-card">
+        <div class="theme-preview preview-a">🌴</div>
+        <div class="theme-info">
+          <div class="theme-name">A — Lush &amp; Natural</div>
+          <div class="theme-desc">Photography-forward. Deep greens and botanical atmosphere. Feels like the park at golden hour.</div>
+          <span class="theme-link">Explore Theme A →</span>
+        </div>
+      </a>
+
+      <a href="index-b.html" class="theme-card">
+        <div class="theme-preview preview-b">🌿</div>
+        <div class="theme-info">
+          <div class="theme-name">B — Clean &amp; Community</div>
+          <div class="theme-desc">Bold and direct. Split hero, marquee ticker, card grid. Modern nonprofit energy.</div>
+          <span class="theme-link">Explore Theme B →</span>
+        </div>
+      </a>
+
+      <a href="index-c.html" class="theme-card">
+        <div class="theme-preview preview-c">🦋</div>
+        <div class="theme-info">
+          <div class="theme-name">C — Warm &amp; Handcrafted</div>
+          <div class="theme-desc">Editorial newspaper layout. Earthy tones. Feels like something you'd pin on a bulletin board.</div>
+          <span class="theme-link">Explore Theme C →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="note">
+      <strong>How this works:</strong> All three themes share the same pages, events list, and iNaturalist feed. The events list on each homepage pulls from a Google Sheet — in demo mode it shows sample data. When Bev is ready, she adds a row to a spreadsheet and it appears on the site automatically. No login. No webmaster. No waiting.<br><br>
+      <strong>Content pages included:</strong> Visit · Plants Collection · Events · Nature (iNaturalist) · Volunteer · Venue Rentals · Members · About · Donate<br><br>
+      Built by Randy Tuft as a demo for PSBP leadership.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate — Palma Sola Botanical Park</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .donate-hero { background: var(--green-deep); color: var(--sand); padding: 3.5rem 1.5rem; text-align: center; }
+    .donate-hero h1 { font-family: var(--font-display); font-size: 2.8rem; color: var(--sand); margin-bottom: 0.75rem; }
+    .donate-hero p { color: rgba(245,239,224,0.85); font-size: 1.1rem; max-width: 560px; margin: 0 auto; line-height: 1.65; }
+    .donate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+    .donate-ways { }
+    .donate-way { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid #e0e0e0; }
+    .donate-way:last-child { border-bottom: none; }
+    .way-icon { font-size: 2rem; flex-shrink: 0; }
+    .way-body h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--green-deep); margin-bottom: 0.4rem; }
+    .way-body p { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; margin-bottom: 0.6rem; }
+    .impact-box { background: #f0f7e8; border-radius: 10px; padding: 2rem; border: 1px solid #c5dfa8; }
+    .impact-box h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--green-deep); margin-bottom: 1.25rem; }
+    .impact-item { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 1rem; }
+    .impact-amount { font-family: var(--font-display); font-size: 1.2rem; color: var(--green-deep); font-weight: 700; flex-shrink: 0; width: 60px; }
+    .impact-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.5; }
+    .tax-note { background: var(--sand); border-radius: 8px; padding: 1.5rem; margin-top: 2rem; }
+    .tax-note p { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; margin: 0; }
+    @media (max-width: 768px) { .donate-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Palma Sola Botanical Park</span>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="plants.html">Plants</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="venue.html">Rent the Park</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html" class="active btn btn-accent" style="padding:0.35rem 0.9rem;font-size:0.8rem;">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="donate-hero">
+    <h1>Keep it free. Keep it open.</h1>
+    <p>We receive no government funding. No entrance fee. Your donation is what makes both of those things possible — and has been since 1990.</p>
+  </div>
+
+  <div class="page-content">
+    <div class="donate-grid">
+      <div class="donate-ways">
+        <h2 class="section-head">Ways to donate</h2>
+
+        <div class="donate-way">
+          <span class="way-icon">💳</span>
+          <div class="way-body">
+            <h3>Online — Credit Card or PayPal</h3>
+            <p>Fast and secure. Processed through the park's existing payment system.</p>
+            <a href="https://palmasolabp.org/donate/" target="_blank" rel="noopener" class="btn btn-primary">Donate online →</a>
+          </div>
+        </div>
+
+        <div class="donate-way">
+          <span class="way-icon">✉️</span>
+          <div class="way-body">
+            <h3>By Mail</h3>
+            <p>Send a check or money order payable to <strong>Palma Sola Botanical Park</strong>:</p>
+            <p><strong>P.O. Box 14214<br>Bradenton, Florida 34280</strong></p>
+          </div>
+        </div>
+
+        <div class="donate-way">
+          <span class="way-icon">🏦</span>
+          <div class="way-body">
+            <h3>Securities &amp; Appreciated Assets</h3>
+            <p>Securities and mutual funds held more than one year can be donated to the park, potentially eliminating federal capital gains taxes on the transfer. Contact your financial advisor for specifics, and reach out to us to coordinate the transfer.</p>
+            <a href="mailto:palmasolabp@aol.com?subject=Securities Donation" class="btn btn-outline" style="font-size:0.85rem">Contact us</a>
+          </div>
+        </div>
+
+        <div class="donate-way">
+          <span class="way-icon">🌿</span>
+          <div class="way-body">
+            <h3>Become a Member</h3>
+            <p>Annual memberships are a great way to give regularly and get something back — including reciprocal access to 380+ botanical parks nationwide.</p>
+            <a href="members.html" class="btn btn-outline" style="font-size:0.85rem">See membership options →</a>
+          </div>
+        </div>
+
+        <div class="donate-way">
+          <span class="way-icon">📦</span>
+          <div class="way-body">
+            <h3>In-Kind Donations</h3>
+            <p>Tools, gardening supplies, baked goods for events, professional services. We're a scrappy operation and genuinely use all of it. Contact us to discuss.</p>
+          </div>
+        </div>
+
+        <div class="tax-note">
+          <p>Palma Sola Botanical Park Foundation, Inc. is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible in accordance with current IRS code. You will receive a receipt for your records.</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="impact-box">
+          <h2>What your donation does</h2>
+          <div class="impact-item">
+            <span class="impact-amount">$25</span>
+            <span class="impact-desc">Covers tools and supplies for one Thursday workday</span>
+          </div>
+          <div class="impact-item">
+            <span class="impact-amount">$50</span>
+            <span class="impact-desc">Plants and soil for one new bed in the butterfly garden</span>
+          </div>
+          <div class="impact-item">
+            <span class="impact-amount">$100</span>
+            <span class="impact-desc">Repairs and maintenance supplies for a month</span>
+          </div>
+          <div class="impact-item">
+            <span class="impact-amount">$250</span>
+            <span class="impact-desc">Educational materials for a field trip class</span>
+          </div>
+          <div class="impact-item">
+            <span class="impact-amount">$500</span>
+            <span class="impact-desc">New signage for a garden section or trail</span>
+          </div>
+          <div class="impact-item">
+            <span class="impact-amount">$1,000+</span>
+            <span class="impact-desc">Capital improvements — benches, irrigation, infrastructure</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Palma Sola Botanical Park</div>
+        <p class="footer-text">501(c)(3) nonprofit · All contributions tax-deductible</p>
+        <p class="footer-text" style="margin-top:0.75rem">P.O. Box 14214, Bradenton FL 34280<br>(941) 761-2866 · palmasolabp@aol.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Plan Your Visit</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="nature.html">Plants &amp; Nature</a></li>
+          <li><a href="venue.html">Rent the Park</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="members.html">Membership</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Palma Sola Botanical Park Foundation, Inc.</span>
+      <span>Open 8am–Dusk · Free Always</span>
+    </div>
+  </footer>
+  <script src="js/psbp.js"></script>
+</body>
+</html>
