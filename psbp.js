@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // SAMPLE ROW:
 //   2024-12-11 | 2024-12-15 | Winter Nights Under the Lights | Holiday lights display, food trucks, live music | 6–9pm | yes | Holiday
 //
-const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1bxa4w47DCSgQuENjagORVUpR9qf9o2IYyxM5z_2Azpc/edit?usp=sharing';
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRvwi51jlrvUaLBrRwSXCK2EeEd1WWgmWyEGnO6uik87-s-RgMqqhozaIveYAGjdLUq1-q6YueOW5uD/pub?output=csv';
 
 // Demo data shown when no real sheet is connected
 const DEMO_EVENTS = [
