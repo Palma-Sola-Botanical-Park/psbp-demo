@@ -230,7 +230,7 @@ async function loadINaturalist(containerId, limit = 6) {
     const data = await resp.json();
 
     if (!data.results || data.results.length === 0) {
-      container.innerHTML = '<p>No observations loaded yet. <a href="https://www.inaturalist.org/projects/' + INAT_PROJECT + '" target="_blank">Be the first to add one!</a></p>';
+      container.innerHTML = '<p>No observations recorded yet. Check back soon!</p>';
       return;
     }
 
@@ -240,23 +240,21 @@ async function loadINaturalist(containerId, limit = 6) {
       const name = obs.taxon ? obs.taxon.preferred_common_name || obs.taxon.name : 'Unknown species';
       const sciName = obs.taxon ? obs.taxon.name : '';
       const date = obs.observed_on ? new Date(obs.observed_on + 'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '';
-      const link = `https://www.inaturalist.org/observations/${obs.id}`;
       html += `
-      <a class="inat-card" href="${link}" target="_blank" rel="noopener">
+      <div class="inat-card">
         ${photo ? `<img src="${photo}" alt="${name}" loading="lazy">` : '<div class="inat-no-photo">No photo</div>'}
         <div class="inat-info">
           <span class="inat-common">${name}</span>
           <span class="inat-sci">${sciName}</span>
           <span class="inat-date">${date}</span>
         </div>
-      </a>`;
+      </div>`;
     });
     html += '</div>';
-    html += `<p class="inat-link"><a href="https://www.inaturalist.org/projects/${INAT_PROJECT}" target="_blank" rel="noopener">See all observations on iNaturalist →</a></p>`;
     container.innerHTML = html;
   } catch(err) {
     console.error(err);
-    container.innerHTML = `<p>Couldn't load iNaturalist data right now. <a href="https://www.inaturalist.org/projects/${INAT_PROJECT}" target="_blank">View directly on iNaturalist</a>.</p>`;
+    container.innerHTML = '<p style="color:#999">Live data temporarily unavailable. Check back soon.</p>';
   }
 }
 
@@ -299,7 +297,6 @@ async function loadINatCounter(containerId) {
     const latestDate = latest && latest.observed_on
       ? new Date(latest.observed_on + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
       : '';
-    const latestLink = latest ? `https://www.inaturalist.org/observations/${latest.id}` : `https://www.inaturalist.org/projects/${INAT_PROJECT}`;
 
     let html = `
     <div class="inat-counter">
@@ -317,18 +314,18 @@ async function loadINatCounter(containerId) {
       ${latestPhoto ? `
       <div class="counter-latest">
         <span class="counter-latest-label">Most recent sighting</span>
-        <a href="${latestLink}" target="_blank" rel="noopener" class="counter-photo-link">
+        <div class="counter-photo-link">
           <img src="${latestPhoto}" alt="${latestName}" class="counter-photo">
           <span class="counter-photo-name">${latestName}</span>
           ${latestDate ? `<span class="counter-photo-date">${latestDate}</span>` : ''}
-        </a>
+        </div>
       </div>` : ''}
-      <a href="https://www.inaturalist.org/projects/${INAT_PROJECT}" target="_blank" rel="noopener" class="counter-cta">Add your observation →</a>
+      <p class="counter-cta">Log your sightings with the iNaturalist app</p>
     </div>`;
 
     container.innerHTML = html;
   } catch(err) {
     console.error(err);
-    container.innerHTML = `<p style="font-size:0.85rem;color:#999">Couldn't load live data. <a href="https://www.inaturalist.org/projects/${INAT_PROJECT}" target="_blank">View on iNaturalist</a>.</p>`;
+    container.innerHTML = '<p style="font-size:0.85rem;color:#999">Live data temporarily unavailable.</p>';
   }
 }
