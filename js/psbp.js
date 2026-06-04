@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // SAMPLE ROW:
 //   2024-12-11 | 2024-12-15 | Winter Nights Under the Lights | Holiday lights display, food trucks, live music | 6–9pm | yes | Holiday
 //
-const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRvwi51jlrvUaLBrRwSXCK2EeEd1WWgmWyEGnO6uik87-s-RgMqqhozaIveYAGjdLUq1-q6YueOW5uD/pub?output=csv';
+const SHEET_CSV_URL = 'YOUR_GOOGLE_SHEET_CSV_URL_HERE';
 
 // Demo data shown when no real sheet is connected
 const DEMO_EVENTS = [
@@ -147,7 +147,7 @@ function renderEvents(events, containerId) {
   if (upcoming.length > 0) {
     html += '<div class="events-section">';
     upcoming.forEach(ev => {
-      const closed = ev.closedtopublic === 'yes' || ev.closedToPublic === 'yes';
+      const closed = (ev.closedtopublic || ev.closedToPublic || '').toLowerCase().trim() === 'yes';
       html += `
       <div class="event-card">
         <div class="event-date-col">

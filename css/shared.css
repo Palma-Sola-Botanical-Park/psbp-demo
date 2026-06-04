@@ -373,3 +373,19 @@ p { margin-bottom: 1rem; }
 }
 
 .counter-cta:hover { color: var(--sand); text-decoration: none; }
+
+/* ---- NAV OVERFLOW FIX (added Plants link) ---- */
+.nav-logo { font-size: 0.95rem; }
+
+.nav-links a {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.45rem;
+  letter-spacing: 0.02em;
+}
+
+.nav-links { gap: 0.1rem; }
+
+@media (max-width: 1100px) {
+  .nav-logo { font-size: 0.85rem; }
+  .nav-links a { font-size: 0.72rem; padding: 0.35rem 0.35rem; }
+}
